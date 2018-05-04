@@ -8,7 +8,7 @@ public class Main {
         
         boolean bool = true;
         
-        for(int i=0; i<10; i++){
+        /*for(int i=0; i<10; i++){
         	piServer.setState(0, bool);
         	piServer.setState(1, !bool);
         	bool = !bool;
@@ -17,8 +17,17 @@ public class Main {
         	}catch(InterruptedException e){
         		//
         	}
-        }
+        }*/
         
+        /*piServer.setState(0, true);
+        piServer.setState(1, true);
+        piServer.setState(2, true);
+        
+        /*piServer.createTrigger("Trigger", "Trigger 001", 0,
+                               1, false, false);
+       piServer.createTrigger("Trigger", "Trigger 002", 1,
+                               2, false, false);*/
+        piServer.setState(0, false);
         
     }
 }
