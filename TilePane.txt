@@ -1,0 +1,18 @@
+<TilePane prefColumns="4" prefHeight="560.0" prefRows="4" prefWidth="700.0" GridPane.rowIndex="1" fx:id="tilePane">
+               <children>
+                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="155.0" prefWidth="135.0"
+                              style="-fx-background-color: #C9DFF2;">
+                     <TilePane.margin>
+                        <Insets left="30.0" top="25.0" />
+                     </TilePane.margin>
+                     <children>
+                        <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="18.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/light.png" />
+                           </image>
+                        </ImageView>
+                        <JFXToggleButton layoutY="95.0" prefHeight="60.0" prefWidth="135.0" text="Light" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </TilePane>

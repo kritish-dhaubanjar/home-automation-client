@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.Cursor?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.Font?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="client.controller.ItemController"
+            prefHeight="800" prefWidth="600" stylesheets="@../css/style.css">
+
+    <left>
+        <VBox prefWidth="100.0" styleClass="vbox" BorderPane.alignment="CENTER">
+            <children>
+                <ImageView fitHeight="50.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" />
+                <GridPane minHeight="90.0" styleClass="vbox-menu" fx:id="homePane">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                    <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                    </padding>
+                    <children>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="TOP">
+                            <image>
+                                <Image url="@../icons/home.png" />
+                            </image>
+                        </ImageView>
+                        <Text fill="WHITE" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Home" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Text>
+                    </children>
+                </GridPane>
+                <GridPane minHeight="90.0" styleClass="vbox-menu" fx:id="itemsPane">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                    <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                    </padding>
+                    <children>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="TOP">
+                            <image>
+                                <Image url="@../icons/light-automation.png" />
+                            </image>
+                        </ImageView>
+                        <Text fill="WHITE" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Items" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Text>
+                    </children>
+                </GridPane>
+                <GridPane minHeight="90.0" styleClass="vbox-menu" fx:id="triggersPane">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                    <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                    </padding>
+                    <children>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="TOP">
+                            <image>
+                                <Image url="@../icons/remote.png" />
+                            </image>
+                        </ImageView>
+                        <Text fill="WHITE" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Trigger" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Text>
+                    </children>
+                </GridPane>
+                <GridPane minHeight="90.0" styleClass="vbox-menu" fx:id="systemPane">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                    <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                    </padding>
+                    <children>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="TOP">
+                            <image>
+                                <Image url="@../icons/service.png" />
+                            </image>
+                        </ImageView>
+                        <Text fill="WHITE" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="System" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Text>
+                    </children>
+                </GridPane>
+                <GridPane fx:id="exitPane" minHeight="90.0" styleClass="vbox-menu">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                    <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                    </padding>
+                    <children>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="TOP">
+                            <image>
+                                <Image url="@../icons/shutdown.png" />
+                            </image>
+                        </ImageView>
+                        <Text fill="WHITE" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Exit" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Text>
+                    </children>
+                </GridPane>
+            </children>
+        </VBox>
+    </left>
+
+</BorderPane>

@@ -1,0 +1,11 @@
+.vbox{
+  -fx-background-color:  #333A42;
+}
+
+.vbox-menu:hover{
+  -fx-background-color:  #485058;
+}
+
+.hbox{
+  -fx-background-color:  #485058;
+}
