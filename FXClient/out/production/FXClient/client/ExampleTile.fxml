@@ -18,7 +18,7 @@
    <children>
       <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="TOP">
          <image>
-            <Image url="@../icons/light.png" />
+            <Image url="@../icons/items/light.png" />
          </image>
       </ImageView>
       <JFXToggleButton text="Light" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM" />

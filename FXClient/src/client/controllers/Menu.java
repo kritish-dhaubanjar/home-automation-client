@@ -1,7 +1,9 @@
-package client.controller;
+package client.controllers;
 
-import javafx.fxml.FXML;
+import client.Main;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.layout.GridPane;
 
 import java.io.IOException;
@@ -19,21 +21,19 @@ public class Menu {
     }
 
     public void setMenu(){
-        FXMLLoader fxmlLoader = new FXMLLoader();
-
         homePane.setOnMouseClicked((event -> {
-            try {
-                fxmlLoader.setLocation(getClass().getResource("../home.fxml"));
-                homePane.getScene().setRoot(fxmlLoader.load());
+            try{
+                Parent root = FXMLLoader.load(getClass().getResource("../home.fxml"));
+                Main.primaryStage.setScene(new Scene(root,800,600));
             }catch (IOException e){
                 System.out.println(e.getMessage());
             }
         }));
 
         itemsPane.setOnMouseClicked((event -> {
-            try {
-                fxmlLoader.setLocation(getClass().getResource("../items.fxml"));
-                itemsPane.getScene().setRoot(fxmlLoader.load());
+            try{
+                Parent root = FXMLLoader.load(getClass().getResource("../items.fxml"));
+                Main.primaryStage.setScene(new Scene(root,800,600));
             }catch (IOException e){
                 System.out.println(e.getMessage());
             }

@@ -1,4 +1,4 @@
-package client.controller;
+package client.controllers;
 
 public class TriggerController {
 }

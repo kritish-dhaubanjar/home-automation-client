@@ -1,6 +1,6 @@
 package client.refresh;
 
-import client.controller.HomeController;
+import client.controllers.HomeController;
 import client.model.Item;
 import javafx.concurrent.Service;
 import javafx.concurrent.Task;

@@ -11,9 +11,9 @@ public class Datasource {
 
     private static Connection connection;
     private static Statement statement;
-    private static final String URL = "jdbc:mysql://localhost:3306/homeAutomation";
-    private static final String username = "root";
-    private static final String password = "toor";
+    private static final String URL = "jdbc:mysql://raspberrypi.local:3306/homeAutomation";
+    private static final String username = "pi";
+    private static final String password = "raspberry";
 
     public static boolean success = false;
     public static String error;

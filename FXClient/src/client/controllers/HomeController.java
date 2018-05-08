@@ -1,5 +1,6 @@
-package client.controller;
+package client.controllers;
 
+import client.Main;
 import client.database.Datasource;
 import client.model.Item;
 import client.refresh.RefreshItemService;
@@ -7,14 +8,18 @@ import com.jfoenix.controls.JFXToggleButton;
 import javafx.application.Platform;
 import javafx.concurrent.Service;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.*;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.TilePane;
 
 import java.io.IOException;
+import java.rmi.RemoteException;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -27,7 +32,7 @@ public class HomeController{
     TilePane tilePane;
 
     public static Datasource datasource;
-    private static List<Item> itemList;
+    public static List<Item> itemList;
     private Service<List<Item>> refresh;
     private Map<String, String> icons = new HashMap<>();
 
@@ -45,27 +50,27 @@ public class HomeController{
         Menu menu = new Menu(homePane, itemsPane, triggersPane, systemPane, exitPane);
         menu.setMenu();
 
-        icons.put("TV", "tv.png");
-        icons.put("Fan", "fan.png");
-        icons.put("Laptop", "laptop.png");
-        icons.put("Light", "light.png");
-        icons.put("Phone", "phone.png");
-        icons.put("Fridge", "fridge.png");
-        icons.put("Socket", "socket.png");
-        icons.put("Other", "other.png");
+        icons.put("tv", "tv.png");
+        icons.put("fan", "fan.png");
+        icons.put("laptop", "laptop.png");
+        icons.put("light", "light.png");
+        icons.put("phone", "phone.png");
+        icons.put("fridge", "fridge.png");
+        icons.put("socket", "socket.png");
+        icons.put("other", "other.png");
     }
 
-    public void checkDatabase(){
+    private void checkDatabase(){
         datasource = new Datasource();
-        if(datasource.error != null){
+        if(Datasource.error != null){
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setHeaderText(datasource.error);
+            alert.setHeaderText(Datasource.error);
             alert.showAndWait();
             Platform.exit();
         }
     }
 
-    public void reloadItems(){
+    private void reloadItems(){
 
         tilePane.getChildren().clear();
 
@@ -82,7 +87,11 @@ public class HomeController{
             imageView.setLayoutX(18);
             imageView.setLayoutY(12);
 
-            Image img = new Image("@../../icons/items/" + icons.get(item.getDeviceName()));
+            String icon = "other.png";
+            if(icons.containsKey(item.getDeviceName().toLowerCase()))
+                icon = icons.get(item.getDeviceName().toLowerCase());
+
+            Image img = new Image("@../../icons/items/" + icon);
 
             imageView.setImage(img);
 
@@ -94,6 +103,11 @@ public class HomeController{
             button.setLayoutY(95);
 
             button.setOnAction((btnEvent)->{
+                try{
+                    Main.piServer.setState(item.getGpioPin(), button.isSelected());
+                }catch (Exception e){
+                    System.out.println(e.getMessage());
+                }
                 refresh = new RefreshItemService();
                 refresh.start();
                 refresh.setOnSucceeded(event -> {
@@ -106,4 +120,5 @@ public class HomeController{
             tilePane.getChildren().add(anchorPane);
         }
     }
+
 }

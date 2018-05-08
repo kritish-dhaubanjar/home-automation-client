@@ -2,7 +2,7 @@ package client.database;
 
 import client.model.Item;
 
-public class Test {
+public class DatabaseTest {
     public static void main(String[] args) {
 
         Datasource datasource = new Datasource();
