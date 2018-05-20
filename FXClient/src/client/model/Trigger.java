@@ -24,55 +24,23 @@ public class Trigger {
         return _id;
     }
 
-    public void set_id(int _id) {
-        this._id = _id;
-    }
-
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getNote() {
-        return note;
-    }
-
-    public void setNote(String note) {
-        this.note = note;
     }
 
     public boolean isShouldBeState() {
         return shouldBeState;
     }
 
-    public void setShouldBeState(boolean shouldBeState) {
-        this.shouldBeState = shouldBeState;
-    }
-
     public boolean isTriggerState() {
         return triggerState;
-    }
-
-    public void setTriggerState(boolean triggerState) {
-        this.triggerState = triggerState;
     }
 
     public int getMasterPin() {
         return masterPin;
     }
 
-    public void setMasterPin(int masterPin) {
-        this.masterPin = masterPin;
-    }
-
     public int getSlavePin() {
         return slavePin;
-    }
-
-    public void setSlavePin(int slavePin) {
-        this.slavePin = slavePin;
     }
 }

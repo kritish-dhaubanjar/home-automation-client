@@ -15,7 +15,7 @@ import java.net.MulticastSocket;
 public class FXReceiver extends Service<Void>{
 
     private int port = 8085;
-    private String host = "224.0.0.1";
+    private String host = "224.0.1.2";
 
     @Override
     protected Task<Void> createTask() {
@@ -23,7 +23,7 @@ public class FXReceiver extends Service<Void>{
             @Override
             protected Void call() {
                 try{
-                    System.out.println("Receiver Listning on 224.0.0.1:8085");
+                    System.out.println("Receiver Listning on 224.0.1.2:8085");
                     byte [] buffer = new byte[10];
                     MulticastSocket socket = new MulticastSocket(port);
                     InetAddress address = InetAddress.getByName(host);

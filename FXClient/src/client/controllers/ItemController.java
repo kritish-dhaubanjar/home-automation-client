@@ -38,7 +38,6 @@ public class ItemController {
     @FXML
     JFXButton addItem;
 
-    public static Datasource datasource;
     public static List<Item> itemList;
     private Service<List<Item>> refresh;
     private Map<String, String> icons = new HashMap<>();

@@ -24,47 +24,15 @@ public class Item {
         return gpioPin;
     }
 
-    public void setGpioPin(int gpioPin) {
-        this.gpioPin = gpioPin;
-    }
-
     public String getDeviceName() {
         return deviceName;
-    }
-
-    public void setDeviceName(String deviceName) {
-        this.deviceName = deviceName;
     }
 
     public String getNotes() {
         return notes;
     }
 
-    public void setNotes(String notes) {
-        this.notes = notes;
-    }
-
     public boolean isState() {
         return state;
-    }
-
-    public void setState(boolean state) {
-        this.state = state;
-    }
-
-    public int getRoomId() {
-        return roomId;
-    }
-
-    public void setRoomId(int roomId) {
-        this.roomId = roomId;
-    }
-
-    public LocalDateTime getUpdated_at() {
-        return updated_at;
-    }
-
-    public void setUpdated_at(LocalDateTime updated_at) {
-        this.updated_at = updated_at;
     }
 }

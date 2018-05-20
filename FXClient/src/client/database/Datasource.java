@@ -47,7 +47,6 @@ public class Datasource {
                 Timestamp timestamp = itemsSet.getTimestamp(6);
                 itemsList.add(new Item(gpioPin, deviceName, notes, state, roomId, timestamp.toLocalDateTime()));
             }
-
             return itemsList;
 
         }catch (SQLException e){

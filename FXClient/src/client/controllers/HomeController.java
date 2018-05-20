@@ -36,8 +36,13 @@ public class HomeController{
     private Service<List<Item>> refresh;
     private Map<String, String> icons = new HashMap<>();
 
+    private static boolean init=false;
+
     public void initialize(){
-        checkDatabase();
+        if(!init) {
+            checkDatabase();
+            init = true;
+        }
 
         refresh = new RefreshItemService();
         refresh.setOnSucceeded(event -> {

@@ -46,10 +46,8 @@ public class Main extends Application {
     @Override
     public void init() throws Exception {
         super.init();
-
         FXReceiver fxReceiver = new FXReceiver();
         fxReceiver.start();
-
     }
 
     public void stop() throws Exception {

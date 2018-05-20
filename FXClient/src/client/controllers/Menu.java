@@ -39,6 +39,15 @@ public class Menu {
             }
         }));
 
+        triggersPane.setOnMouseClicked((event -> {
+            try{
+                Parent root = FXMLLoader.load(getClass().getResource("../triggers.fxml"));
+                Main.primaryStage.setScene(new Scene(root,800,600));
+            }catch (IOException e){
+                System.out.println(e.getMessage());
+            }
+        }));
+
 
     }
 
