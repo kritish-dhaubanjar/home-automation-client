@@ -8,11 +8,11 @@ public class Main {
         
         boolean bool = true;
         
+        piServer.setState(0, false );
         
-        
-        piServer.setState(2, true);
-        piServer.setState(0, true);
-        piServer.setState(1, true);
+        //piServer.setState(2, true);
+        //piServer.setState(0, true);
+        //piServer.setState(1, true);
         
         //piServer.setState(0, false);
         
