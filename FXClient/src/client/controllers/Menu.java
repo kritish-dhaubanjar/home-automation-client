@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.GridPane;
 
 import java.io.IOException;
+import java.net.URL;
 
 public class Menu {
 
@@ -23,7 +24,9 @@ public class Menu {
     public void setMenu(){
         homePane.setOnMouseClicked((event -> {
             try{
-                Parent root = FXMLLoader.load(getClass().getResource("../home.fxml"));
+                FXMLLoader home = new FXMLLoader();
+                home.setLocation(getClass().getResource("home.fxml"));
+                Parent root = home.load();
                 Main.primaryStage.setScene(new Scene(root,800,600));
             }catch (IOException e){
                 System.out.println(e.getMessage());
@@ -32,7 +35,9 @@ public class Menu {
 
         itemsPane.setOnMouseClicked((event -> {
             try{
-                Parent root = FXMLLoader.load(getClass().getResource("../items.fxml"));
+                FXMLLoader items = new FXMLLoader();
+                items.setLocation(getClass().getResource("items.fxml"));
+                Parent root = items.load();
                 Main.primaryStage.setScene(new Scene(root,800,600));
             }catch (IOException e){
                 System.out.println(e.getMessage());
@@ -41,7 +46,9 @@ public class Menu {
 
         triggersPane.setOnMouseClicked((event -> {
             try{
-                Parent root = FXMLLoader.load(getClass().getResource("../triggers.fxml"));
+                FXMLLoader triggers = new FXMLLoader();
+                triggers.setLocation(getClass().getResource("triggers.fxml"));
+                Parent root = triggers.load();
                 Main.primaryStage.setScene(new Scene(root,800,600));
             }catch (IOException e){
                 System.out.println(e.getMessage());

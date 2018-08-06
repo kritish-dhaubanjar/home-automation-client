@@ -14,7 +14,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane minHeight="600.0" minWidth="800.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.controllers.HomeController" fx:id="home">
+<BorderPane minHeight="600.0" minWidth="800.0" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.controllers.HomeController" fx:id="home">
    <left>
       <VBox prefWidth="100.0" styleClass="vbox" BorderPane.alignment="CENTER">
          <children>
@@ -35,7 +35,7 @@
                <children>
                   <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="TOP">
                      <image>
-                        <Image url="@../icons/home.png" />
+                        <Image url="@icons/home.png" />
                      </image>
                   </ImageView>
                   <Text fill="WHITE" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Home" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
@@ -61,7 +61,7 @@
                <children>
                   <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="TOP">
                      <image>
-                        <Image url="@../icons/light-automation.png" />
+                        <Image url="@icons/light-automation.png" />
                      </image>
                   </ImageView>
                   <Text fill="WHITE" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Items" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
@@ -87,7 +87,7 @@
                <children>
                   <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="TOP">
                      <image>
-                        <Image url="@../icons/remote.png" />
+                        <Image url="@icons/remote.png" />
                      </image>
                   </ImageView>
                   <Text fill="WHITE" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Trigger" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
@@ -113,7 +113,7 @@
                <children>
                   <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="TOP">
                      <image>
-                        <Image url="@../icons/service.png" />
+                        <Image url="@icons/service.png" />
                      </image>
                   </ImageView>
                   <Text fill="WHITE" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="System" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
@@ -139,7 +139,7 @@
                <children>
                   <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="TOP">
                      <image>
-                        <Image url="@../icons/shutdown.png" />
+                        <Image url="@icons/shutdown.png" />
                      </image>
                   </ImageView>
                   <Text fill="WHITE" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Exit" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
@@ -174,7 +174,7 @@
                   </Text>
                   <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../icons/adjust.png" />
+                        <Image url="@icons/adjust.png" />
                      </image>
                      <HBox.margin>
                         <Insets left="10.0" />

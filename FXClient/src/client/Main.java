@@ -18,7 +18,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("home.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("controllers/home.fxml"));
         Main.primaryStage = primaryStage;
         primaryStage.setTitle("Home Automation");
         primaryStage.setScene(new Scene(root, 800, 600));

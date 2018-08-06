@@ -42,11 +42,11 @@ public class FXReceiver extends Service<Void>{
                                     Parent root;
                                     switch (rootId) {
                                         case "home":
-                                            root = FXMLLoader.load(getClass().getResource("home.fxml"));
+                                            root = FXMLLoader.load(getClass().getResource("controllers/home.fxml"));
                                             Main.primaryStage.setScene(new Scene(root,800,600));
                                             break;
                                         case "items":
-                                            root = FXMLLoader.load(getClass().getResource("items.fxml"));
+                                            root = FXMLLoader.load(getClass().getResource("controllers/items.fxml"));
                                             Main.primaryStage.setScene(new Scene(root,800,600));
                                             break;
                                         case "triggers":

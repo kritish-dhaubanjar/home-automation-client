@@ -10,6 +10,7 @@ import javafx.concurrent.Service;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -91,12 +92,15 @@ public class HomeController{
             imageView.setFitHeight(100);
             imageView.setLayoutX(18);
             imageView.setLayoutY(12);
+            Tooltip tooltip = new Tooltip();
+            tooltip.setText(item.getNotes());
+            Tooltip.install(imageView, tooltip);
 
             String icon = "other.png";
             if(icons.containsKey(item.getDeviceName().toLowerCase()))
                 icon = icons.get(item.getDeviceName().toLowerCase());
 
-            Image img = new Image("@../../icons/items/" + icon);
+            Image img = new Image(getClass().getResourceAsStream("icons/items/"+icon));
 
             imageView.setImage(img);
 
@@ -106,6 +110,7 @@ public class HomeController{
             button.setPrefWidth(135);
             button.setText(item.getDeviceName());
             button.setLayoutY(95);
+            Tooltip.install(button, tooltip);
 
             button.setOnAction((btnEvent)->{
                 try{

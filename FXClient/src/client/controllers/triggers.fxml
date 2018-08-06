@@ -1,27 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.image.Image?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.TilePane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.text.Text?>
-
-<BorderPane fx:id="items" prefHeight="600.0" prefWidth="800.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.controllers.ItemController">
-
+<?import javafx.scene.text.Font?>
+<?import com.jfoenix.controls.JFXButton?>
+<BorderPane minHeight="600.0" minWidth="800.0" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.controllers.TriggerController" fx:id="home">
     <left>
         <VBox prefWidth="100.0" styleClass="vbox" BorderPane.alignment="CENTER">
             <children>
                 <ImageView fitHeight="50.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" />
-                <GridPane fx:id="homePane" minHeight="90.0" styleClass="vbox-menu">
+                <GridPane minHeight="90.0" styleClass="vbox-menu" fx:id="homePane">
                     <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                     </columnConstraints>
@@ -37,7 +33,7 @@
                     <children>
                         <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="TOP">
                             <image>
-                                <Image url="@../icons/home.png" />
+                                <Image url="@icons/home.png" />
                             </image>
                         </ImageView>
                         <Text fill="WHITE" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Home" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
@@ -47,7 +43,7 @@
                         </Text>
                     </children>
                 </GridPane>
-                <GridPane fx:id="itemsPane" minHeight="90.0" styleClass="vbox-menu">
+                <GridPane minHeight="90.0" styleClass="vbox-menu" fx:id="itemsPane">
                     <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                     </columnConstraints>
@@ -63,7 +59,7 @@
                     <children>
                         <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="TOP">
                             <image>
-                                <Image url="@../icons/light-automation.png" />
+                                <Image url="@icons/light-automation.png" />
                             </image>
                         </ImageView>
                         <Text fill="WHITE" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Items" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
@@ -73,7 +69,7 @@
                         </Text>
                     </children>
                 </GridPane>
-                <GridPane fx:id="triggersPane" minHeight="90.0" styleClass="vbox-menu">
+                <GridPane minHeight="90.0" styleClass="vbox-menu" fx:id="triggersPane">
                     <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                     </columnConstraints>
@@ -89,7 +85,7 @@
                     <children>
                         <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="TOP">
                             <image>
-                                <Image url="@../icons/remote.png" />
+                                <Image url="@icons/remote.png" />
                             </image>
                         </ImageView>
                         <Text fill="WHITE" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Trigger" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
@@ -99,7 +95,7 @@
                         </Text>
                     </children>
                 </GridPane>
-                <GridPane fx:id="systemPane" minHeight="90.0" styleClass="vbox-menu">
+                <GridPane minHeight="90.0" styleClass="vbox-menu" fx:id="systemPane">
                     <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                     </columnConstraints>
@@ -115,7 +111,7 @@
                     <children>
                         <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="TOP">
                             <image>
-                                <Image url="@../icons/service.png" />
+                                <Image url="@icons/service.png" />
                             </image>
                         </ImageView>
                         <Text fill="WHITE" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="System" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
@@ -141,7 +137,7 @@
                     <children>
                         <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="TOP">
                             <image>
-                                <Image url="@../icons/shutdown.png" />
+                                <Image url="@icons/shutdown.png" />
                             </image>
                         </ImageView>
                         <Text fill="WHITE" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Exit" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
@@ -154,7 +150,6 @@
             </children>
         </VBox>
     </left>
-
     <center>
         <GridPane maxWidth="-Infinity" prefWidth="700.0" BorderPane.alignment="TOP_LEFT">
             <columnConstraints>
@@ -177,30 +172,31 @@
                         </Text>
                         <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@../icons/adjust.png" />
+                                <Image url="@icons/adjust.png" />
                             </image>
                             <HBox.margin>
                                 <Insets left="10.0" />
                             </HBox.margin>
                         </ImageView>
-                  <JFXButton fx:id="addItem" alignment="CENTER_RIGHT" buttonType="RAISED" text="Add Item" textFill="WHITE">
-                     <graphic>
-                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../icons/plus.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                     <HBox.margin>
-                        <Insets left="345.0" />
-                     </HBox.margin>
-                  </JFXButton>
+
+                        <JFXButton fx:id="addTrigger" alignment="CENTER_RIGHT" buttonType="RAISED" text="Add Triggers" textFill="WHITE">
+                            <graphic>
+                                <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@icons/plus.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                            <HBox.margin>
+                                <Insets left="320.0" />
+                            </HBox.margin>
+                        </JFXButton>
                     </children>
                 </HBox>
-                <TilePane fx:id="tilePane" prefColumns="4" prefHeight="560.0" prefRows="4" prefWidth="700.0" GridPane.rowIndex="1">
+                <TilePane prefColumns="4" prefHeight="560.0" prefRows="4" prefWidth="700.0" GridPane.rowIndex="1" fx:id="tilePane">
                     <!--<children>-->
                     <!--<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="155.0" prefWidth="135.0"-->
                     <!--style="-fx-background-color: #C9DFF2;">-->
@@ -221,5 +217,4 @@
             </children>
         </GridPane>
     </center>
-
 </BorderPane>

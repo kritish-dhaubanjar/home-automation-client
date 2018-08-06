@@ -1,5 +1,7 @@
 package client.controllers;
 
+import client.controllers.FXMLs.controllers.AddTriggerController;
+import client.controllers.FXMLs.controllers.EditTriggerController;
 import client.Main;
 import client.model.Item;
 import client.model.Trigger;
@@ -8,9 +10,10 @@ import com.jfoenix.controls.JFXButton;
 import javafx.application.Platform;
 import javafx.concurrent.Service;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.scene.Cursor;
-import javafx.scene.control.Alert;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -18,8 +21,10 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.TilePane;
 import javafx.scene.text.Text;
 
+import java.io.IOException;
 import java.rmi.RemoteException;
 import java.util.List;
+import java.util.Optional;
 
 public class TriggerController {
 
@@ -27,9 +32,11 @@ public class TriggerController {
     GridPane exitPane, homePane, itemsPane, triggersPane, systemPane;
     @FXML
     TilePane tilePane;
+    @FXML
+    JFXButton addTrigger;
 
     private Service<List<Trigger>> refresh;
-    private static List<Trigger> triggers;
+    public static List<Trigger> triggers;
 
     public void initialize(){
 
@@ -41,6 +48,7 @@ public class TriggerController {
         refresh.start();
 
         exitPane.setOnMouseClicked( event -> Platform.exit() );
+        addTrigger.setOnMouseClicked(event -> showAddTriggerDialog());
         Menu menu = new Menu(homePane, itemsPane, triggersPane, systemPane, exitPane);
         menu.setMenu();
     }
@@ -62,7 +70,8 @@ public class TriggerController {
             imageView.setLayoutX(45);
             imageView.setLayoutY(12);
 
-            ImageView info = new ImageView(new Image("@../../icons/info.png"));
+//            ImageView info = new ImageView(new Image("@../../icons/info.png"));
+            ImageView info = new ImageView(new Image(getClass().getResourceAsStream("icons/info.png")));
             info.setFitWidth(25);
             info.setFitHeight(25);
             info.setCursor(Cursor.HAND);
@@ -76,7 +85,7 @@ public class TriggerController {
 
             String icon = "other.png";
 
-            Image img = new Image("@../../icons/items/" + icon);
+            Image img = new Image(getClass().getResourceAsStream("icons/items/"+icon));
 
             imageView.setImage(img);
 
@@ -102,6 +111,8 @@ public class TriggerController {
                 }
             });
 
+            edit.setOnAction(event->editTrigger(trigger));
+
             anchorPane.getChildren().setAll(imageView, info, delete, edit, name);
             tilePane.getChildren().add(anchorPane);
         }
@@ -126,5 +137,45 @@ public class TriggerController {
         return "null";
     }
 
+    private void editTrigger(Trigger trigger){
+        Dialog<ButtonType> dialog = new Dialog<>();
+        dialog.initOwner(tilePane.getScene().getWindow());
+        dialog.setResizable(false);
+        dialog.setTitle("Edit " + trigger.getName());
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("FXMLs/editTriggerDialog.fxml"));
+        try{
+            DialogPane pane = fxmlLoader.load();
+            pane.getButtonTypes().addAll(ButtonType.OK, ButtonType.CANCEL);
+            dialog.setDialogPane(pane);
+        }catch (IOException e){
+            System.out.println(e.getMessage());
+        }
+
+        EditTriggerController controller = fxmlLoader.getController();
+        controller.initialize(trigger);
+        Optional<ButtonType> action = dialog.showAndWait();
+
+        if(action.isPresent() && action.get().equals(ButtonType.OK)){
+            controller.updateTrigger(trigger);
+        }
+    }
+
+    private void showAddTriggerDialog(){
+        Dialog<ButtonType> dialog = new Dialog<>();
+        ButtonType add = new ButtonType("Add",ButtonBar.ButtonData.OK_DONE);
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("FXMLs/addTriggerDialog.fxml"));
+        try {
+            dialog.setDialogPane(fxmlLoader.load());
+        }catch (IOException e){
+            System.out.println(e.getMessage());
+        }
+        dialog.getDialogPane().getButtonTypes().addAll(add, ButtonType.CANCEL);
+        Optional<ButtonType> option = dialog.showAndWait();
+        if(option.isPresent() && option.get().equals(add)){
+            AddTriggerController controller = fxmlLoader.getController();
+            controller.addTrigger();
+        }
+    }
 
 }

@@ -1,7 +1,7 @@
 package client.controllers;
 
-import client.FXMLs.controllers.AddItemController;
-import client.FXMLs.controllers.EditItemController;
+import client.controllers.FXMLs.controllers.AddItemController;
+import client.controllers.FXMLs.controllers.EditItemController;
 import client.Main;
 import client.database.Datasource;
 import client.model.Item;
@@ -12,10 +12,7 @@ import javafx.concurrent.Service;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.Dialog;
-import javafx.scene.control.DialogPane;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -85,12 +82,15 @@ public class ItemController {
             imageView.setFitHeight(100);
             imageView.setLayoutX(18);
             imageView.setLayoutY(12);
+            Tooltip tooltip = new Tooltip();
+            tooltip.setText(item.getNotes());
+            Tooltip.install(imageView, tooltip);
 
             String icon = "other.png";
             if(icons.containsKey(item.getDeviceName().toLowerCase()))
                 icon = icons.get(item.getDeviceName().toLowerCase());
 
-            Image img = new Image("@../../icons/items/" + icon);
+            Image img = new Image(getClass().getResourceAsStream("icons/items/" + icon));
 
             imageView.setImage(img);
 
@@ -130,7 +130,7 @@ public class ItemController {
         dialog.setTitle("Add New Item");
 
         FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getResource("../FXMLs/addItemDialog.fxml"));
+        fxmlLoader.setLocation(getClass().getResource("FXMLs/addItemDialog.fxml"));
         try{
             DialogPane dialogPane = fxmlLoader.load();
             dialogPane.getButtonTypes().add(ButtonType.CLOSE);
@@ -155,7 +155,7 @@ public class ItemController {
         dialog.setTitle("Edit" + item.getDeviceName());
 
         FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getResource("../FXMLs/editItemDialog.fxml"));
+        fxmlLoader.setLocation(getClass().getResource("FXMLs/editItemDialog.fxml"));
         try{
             DialogPane dialogPane = fxmlLoader.load();
             dialogPane.getButtonTypes().add(ButtonType.CLOSE);
